@@ -1,0 +1,10 @@
+function [t,y] = call_dstate()
+tspan=[0.01 5];
+y0=1;
+[t,y]=ode45(@dstate,tspan,y0);
+plot(t,y)
+disp([t,y])
+function dydt=dstate(t,y)
+dydt=y/t;
+end
+end
